@@ -1,0 +1,9 @@
+---
+- name: ansible playbook to copy a file
+  hosts: all
+  become: true
+  tasks:
+  - name: copy a file to destination location
+    copy:
+      src: /root/index.html
+      dest: /root

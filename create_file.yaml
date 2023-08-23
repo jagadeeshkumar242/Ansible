@@ -1,0 +1,9 @@
+---
+- name: To create a file or directory
+  hosts: all
+  become: true
+  tasks:
+  - name: creating a file
+    file:
+      path: /root/demofile.txt
+      state: touch

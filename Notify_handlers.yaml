@@ -1,0 +1,19 @@
+---
+- name: Using notify and handlers to run playbook
+  hosts: all
+  become: true
+  tasks:
+  - name: install package
+    apt:
+      name: apache2
+      state: installed
+    notify: start apache2 service
+
+  handlers:
+  - name: start apache2 service
+    service:
+      name: apache2
+      state: started
+
+
+
